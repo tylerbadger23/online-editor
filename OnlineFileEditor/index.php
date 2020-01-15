@@ -15,7 +15,7 @@ $num_rows = mysqli_num_rows($results);
 <div class="bg-dark">
 
     <div class="files">
-        <p class='left-pagination top-40'>Currently displaying <span class='pagination-small-txt'> <?php echo($num_rows); ?> </span> files</p>
+        <p class='left-pagination top-40'>You currently have <?php echo($num_rows); ?>  documents available to edit. If you want to create a new file, click the <a class='span-a' href="file.php?id=false">create</a> button to get started. </p>
         <?php 
 
         while ($row = mysqli_fetch_row($results)) {?>

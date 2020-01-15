@@ -42,8 +42,8 @@ if(mysqli_num_rows($results) > 0) {
 } else {
     $query = "INSERT INTO `users` (`id`, `email`, `password`,`username`) VALUES (NULL, '$email', '$hashed_password','$username')";
     if(mysqli_query($conn, $query)){
-        $errorMsg = "SuccessfullyCreated Account";
-        header("Location: ../login.php?error=$errorMsg");
+        $errorMsg = "Successfully Created New Account";
+        header("Location: ../index.php?s=$errorMsg");
         exit;
     }
     echo("Phase 3 Completed");

@@ -2,20 +2,24 @@
 require "./config/config.php";
 ?>
 
-<h2>Register For A Account</h2>
-
-<form action="form_handlers/register_user.php" method="post">
-
-    <input type="email" name="reg_email" placeholder="Enter email" required>
-    <input type="password" name="reg_pw" placeholder="Choose a secure password" required>
-    <input type="password" name="reg_pw2" placeholder="Type password again." required>
-
-    <button type="submit">Register</button>
+<form action="form_handlers/register_user.php" method="post" id='login-form'>
+    <h2 class='left-login'>Create Account</h2>
     <br>
-    <p class='error-msg' style='color:red'><?php echo($_GET['error'])?></p>
-    <a href="login.php">Sign in</a>
 
-
+    <input type="email" name="reg_email" placeholder="Enter email">
+    <br>
+    <input type="password" name="reg_pw" placeholder="Enter password">
+    <input type="password" name="reg_pw2" placeholder="Enter password Again">
+    <input type="hidden" name="redirect" value='<?php if(isset($_GET['rp'])) {    
+    echo($_GET['rp']) ;}?>'>
+    <br>
+    <input type="submit" value='Sign Up'>
+    <br>
+    <br>
+    <a href="login.php" class='signuplink'>Already have an account?</a>
+    <p class='error-msg' style='color:red'><?php if(isset($_GET['error'])){
+        echo($_GET['error']);
+    }?></p>
 </form>
 
 </body>
