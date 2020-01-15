@@ -7,6 +7,7 @@ $email = mysqli_real_escape_string($conn, $_POST['reg_email']);
 $email = strtolower($email);
 $password = mysqli_real_escape_string($conn, $_POST['reg_pw']);
 $password2 = mysqli_real_escape_string($conn, $_POST['reg_pw2']);
+$username = mysqli_real_escape_string($conn, $_POST['username']);
 
 //PASSWORD CHECKS
 if($password !== $password2) {
@@ -25,8 +26,14 @@ if (strlen($email) < 5){
     exit;
 }
 
-$username_arr = explode('@', strtolower($email));
-$username = $username_arr[0];
+if (strlen($username) < 5 || strlen($username) > 16){
+    $errorMsg = "Your username must be between 5 and 16 characters";
+    header("Location: ../register.php?error=$errorMsg");
+    exit;
+}
+
+// check username availability
+
 
 $hashed_password = md5($password);
 //filter data BEFORE PUBLISHING

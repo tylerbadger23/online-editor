@@ -208,12 +208,12 @@ form input[type='text'] {
 .left-login {
     text-align: left;
     font-size: 22px;
+    margin-top: 150px;
 }
 
 #login-form input[type='email'], #login-form input[type='password'] {
-    width: 250px;
+    width: 265px;
     margin: auto;
-
     border: transparent;
     border-bottom: black 2px solid;
     font-size: 18px;
@@ -225,6 +225,33 @@ form input[type='text'] {
 
 }
 
+.top-form, .bottom-form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+
+.form-center {
+    text-align: left;
+    margin: auto;
+    width: 70%;
+}
+
+
+
+#login-form input[type='text'] {
+    width: 265px;
+    margin: auto;
+    border: transparent;
+    border-bottom: black 2px solid;
+    font-size: 18px;
+    font-family: "Helvetica Neue";
+    color: black;
+    outline: none;
+    padding-bottom: 4px;
+    margin: 4px 10px;
+
+}
 #login-form input[type='submit'] {
     background: rgb(20, 20, 20);
     color: white;
