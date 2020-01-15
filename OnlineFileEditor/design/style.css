@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+nav {
+    width: 100vw;
+    list-style-type: none;
+    text-align: center; 
+    padding: 8px 0px 8px 0px;
+    margin: 0;
+    background: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.left-pagination { 
+    color: rgb(64, 224, 136);
+}
+
+.pagination-small-txt {
+    color: rgb(64, 224, 125);
+    font-weight: 400;
+}
+
+nav a{
+    color: rgb(7, 7, 7);
+    text-decoration: none;
+    outline: none;
+    font-size: 18px;
+    transition: border .4s;
+    border-bottom: 2.5px solid transparent;
+    padding-bottom: 2px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    cursor: pointer;
+    border-bottom:2.5px solid rgb(15, 15, 15);
+}
+
+nav a:target {
+    outline: none;
+}
+
+nav li {
+    display: inline-block;
+    padding: 0px 17px;
+}
+
+nav button {
+    font-family: 'Courier New', Courier, monospace;
+    background: transparent;
+    color: rgb(26, 26, 26);
+    font-size: 18px;
+    border: none;
+    transition: border .4s;
+    border-bottom: 2.5px solid transparent;
+    padding-bottom: 2px;
+}
+
+nav button:hover {
+    cursor: pointer;
+    border-bottom:2.5px solid rgb(41, 41, 41);
+}
+
+
+textarea {
+    background: rgb(255, 255, 255);
+    color: rgb(7, 7, 7);
+    height: 80vh;
+    line-height: 28px;
+    font-size: 16px;
+    width:  1130px;
+    font-family: "Helvetica Neue";
+    outline: none;
+    margin: auto;
+    padding: 45px 60px 20px 60px;
+    border-radius: 8px;
+}
+
+.bg-dark {
+    font-family: "Helvetica Neue";
+    background:  rgb(24, 24, 24);
+    width: 100vw;
+    height: 100vh;
+
+}
+
+#save-btn {
+    color: black;
+    background-color: transparent;
+    border-radius: 7px;
+    color: green;
+    border: none;
+    font-size: 14px;
+    margin-top: 10px;
+    outline: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#delete-btn {
+    color: black;
+    background-color: transparent;
+    border-radius: 7px;
+    color: tomato;
+    border: none;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    outline: none;
+    font-weight: 600;
+}
+
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.bg {
+    background: rgb(41, 41, 41);
+    color: white;
+    height: fit-content;
+    width: 100vw;
+    padding:0px 0px 60px 0px;
+}
+
+
+form input[type='text'] {
+    float: left;
+    font-size: 25px;
+    border: none;
+    padding: 10px 10px;
+    margin: auto;
+    width: 100%;
+    outline: none;
+    color: rgb(228, 228, 228);
+    background: transparent;
+}
+
+#text-area-div {
+    margin: auto;
+    width: 90vw;
+
+}
+
+.files {
+    width: 80vw;
+    margin:auto;
+}
+
+.header-white {
+    color: white;
+    text-align: left;
+    font-size: 28px;
+
+}
+
+.file-card {
+    background: rgb(255, 255, 255);
+    color: rgb(17, 17, 17);
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 4px;
+    margin: auto;
+    margin: 10px 0px 30px 0px;
+}
+
+
+.file-card a {
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(14, 14, 14);
+    outline: none;
+}
+
+.file-card h3 {
+    color: rgb(31, 31, 34);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+.center {
+    text-align: center;
+    
+}
+
+.top-10 {
+    padding-top: 10px;
+}
+
+.top-40 {
+    padding-top: 40px;
+}
+
+.left {
+    text-align: left;
+}
+
+#login-form {
+    width: 80vw;
+    margin:auto;
+}
+
+.left-login {
+    text-align: left;
+    font-size: 22px;
+}
+
+#login-form input[type='email'], #login-form input[type='password'] {
+    width: 250px;
+    margin: auto;
+
+    border: transparent;
+    border-bottom: black 2px solid;
+    font-size: 18px;
+    font-family: "Helvetica Neue";
+    color: black;
+    outline: none;
+    padding-bottom: 4px;
+    margin: 4px 10px;
+
+}
+
+#login-form input[type='submit'] {
+    background: rgb(20, 20, 20);
+    color: white;
+    padding: 10px 30px;
+    margin-top: 10px;
+    font-size: 16px;
+    border:none;
+    border-radius: 5px;
+}
+.signuplink {
+    text-decoration: none;
+    outline: none;
+    padding-top: 10px;
+    color: teal;
+}
