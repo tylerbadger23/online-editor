@@ -42,6 +42,7 @@ nav a{
     border-bottom: 2.5px solid transparent;
     padding-bottom: 2px;
     font-weight: 500;
+    outline: none;
 }
 
 nav a:hover {
@@ -54,11 +55,13 @@ nav a:target {
 }
 
 nav li {
+    outline: none;
     display: inline-block;
     padding: 0px 17px;
 }
 
 nav button {
+    outline: none;
     font-family: 'Courier New', Courier, monospace;
     background: transparent;
     color: rgb(26, 26, 26);
