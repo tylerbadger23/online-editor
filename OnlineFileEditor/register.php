@@ -1,5 +1,6 @@
-<?php require "./headers/header.php"; 
+<?php 
 require "./config/config.php";
+require "./headers/header.php"; 
 ?>
 
 <form action="form_handlers/register_user.php" method="post" id='login-form'>

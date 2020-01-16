@@ -1,6 +1,6 @@
-<?php 
-require "./headers/header.php";   
+<?php  
 require "./config/config.php";
+require "./headers/header.php";  
 ?>
 
 
