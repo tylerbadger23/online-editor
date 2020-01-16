@@ -7,12 +7,8 @@ require "./config/config.php";
         <h2 class='left-login'>Create Account</h2>
         <br>
         <div class="top-form">
-            <input type="email" name="reg_email" placeholder="Enter email"  value='<?php if(isset($_GET['e_success'])) {
-                echo($_GET['e_success']);
-            } ?>'>
-            <input type="text" name="reg_username" placeholder="Choose a username"  value='<?php if(isset($_GET['un_success'])) {
-                echo($_GET['un_success']);
-            } ?>'>
+            <input type="email" name="reg_email" placeholder="Enter email">
+            <input type="text" name="reg_username" placeholder="Choose a username">
         </div>
         <br>
 
