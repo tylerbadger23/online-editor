@@ -17,7 +17,9 @@ Planned Features:
     Syncing With GoogleDrive and DropBox for easier file access.
     Allow users to eventually upload non-allowed file-types: (images/gifs/videos/pdf/mp3,etc)
     Allow users to upload pdf files and convert them to text and reverse.
+    Allow users to change / customize fonts, font-size, colors, bold, italics, line-height, line-spacing
        
 
 
    This project is for my own personal learning and practice and is most likely not going online in the foreseeable future. If you want to learn more or help me with this in any way, contact me on Twitter, Instagram, or GitHub.
+
