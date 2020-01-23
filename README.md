@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
     Basic File & Document Editor
 
 Developed by: Tyler Laceby
@@ -56,4 +56,4 @@ Planned Features:
 
    This project is for my own personal learning and practice and is most likely not going online in the foreseeable future. If you want to learn more or help me with this in any way, contact me on Twitter, Instagram, or GitHub.
 
->>>>>>> 80300fbe8162301f65092869abe9f141b4184768
+
