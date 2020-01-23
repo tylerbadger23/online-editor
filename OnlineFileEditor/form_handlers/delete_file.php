@@ -6,7 +6,7 @@ if(isset($_POST['file_id']) && strlen($_POST['file_id']) === 15) { // check leng
 
     $unique_id = mysqli_real_escape_string($conn, $_POST['file_id']);
     $id = mysqli_real_escape_string($conn, $_POST['real_id']);
-    echo($file_id);
+    echo($unique_id);
 
     
 
@@ -23,7 +23,7 @@ if(isset($_POST['file_id']) && strlen($_POST['file_id']) === 15) { // check leng
 
 } else if(isset($_POST['file_id']) || $_POST['file_id'] == false || $_POST['real_id'] == false) {
     $successMsg = "Your file was successfully deleted";
-    header("Location: ../index.php?filedel=$successMsg");
+    header("Location: ../index.php?filedel=$successMsg"); 
     exit;
 } else {
     $errorMsg = "Could not delete the file you requested. Please try again later.";

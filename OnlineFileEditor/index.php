@@ -20,8 +20,7 @@ $num_rows = mysqli_num_rows($results);
 
         while ($row = mysqli_fetch_row($results)) {?>
         <a href="file.php?id=<?php echo($row[4]); ?>"><div class="file-card">
-            <h3><?php echo($row[1]); ?></h3>
-            <a href="file.php?id=<?php echo($row[4]); ?>">view document</a>
+            <h3 class='no-underline'><?php echo($row[1]); ?></h3>
             <p>Last edited: <?php echo($row[5]); ?></p>
         </div></a> <?php } //end of php block ?> 
 

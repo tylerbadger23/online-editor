@@ -6,6 +6,7 @@ var btn = document.getElementById("delete-modal");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+var hideBar = document.getElementById("logo");
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
@@ -22,3 +23,5 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+hideBar.style.display = "none";

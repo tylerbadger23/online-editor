@@ -9,6 +9,7 @@ $port = 8889;
 
 $conn = new mysqli($host,$user,$password,$db);
 
+$file_name = $_SERVER['PHP_SELF'];
 
 function displayTitle($s_self) {
 
@@ -32,9 +33,8 @@ switch ($s_self) {
     case "account.php":
         $title = "View & Change Account Settings";
         break;
-}
+    }
     return "$title";
 }
-
 
 ?>

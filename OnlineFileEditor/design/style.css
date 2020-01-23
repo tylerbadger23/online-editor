@@ -14,13 +14,25 @@
     
 }
 
-nav {
+.light-nav {
+    color: rgb(20, 20, 20);
     width: 100vw;
     list-style-type: none;
     text-align: center; 
     padding: 8px 0px 8px 0px;
     margin: 0;
     background: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.dark-nav{
+    width: 100vw;
+    list-style-type: none;
+    text-align: center; 
+    padding: 8px 0px 8px 0px;
+    color: rgb(253, 253, 253);
+    margin: 0;
+    background:  rgb(24, 24, 24);
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -33,8 +45,7 @@ nav {
     font-weight: 400;
 }
 
-nav a{
-    color: rgb(7, 7, 7);
+.dark-nav a {
     text-decoration: none;
     outline: none;
     font-size: 18px;
@@ -42,12 +53,30 @@ nav a{
     border-bottom: 2.5px solid transparent;
     padding-bottom: 2px;
     font-weight: 500;
+    color: rgb(253, 253, 253);
     outline: none;
 }
 
-nav a:hover {
+.light-nav a {
+    text-decoration: none;
+    outline: none;
+    font-size: 18px;
+    transition: border .4s;
+    border-bottom: 2.5px solid transparent;
+    padding-bottom: 2px;
+    color: rgb(2, 2, 2);
+    font-weight: 500;
+    outline: none;
+}
+
+.light-nav.a:hover {
     cursor: pointer;
-    border-bottom:2.5px solid rgb(15, 15, 15);
+    border-bottom: 2.5px solid rgb(15, 15, 15);
+}
+
+.dark-nav.a:hover {
+    cursor: pointer;
+    border-bottom: 2.5px solid rgb(255, 255, 255);
 }
 
 nav a:target {
@@ -60,7 +89,7 @@ nav li {
     padding: 0px 17px;
 }
 
-nav button {
+.light-nav button {
     outline: none;
     font-family: 'Courier New', Courier, monospace;
     background: transparent;
@@ -72,25 +101,21 @@ nav button {
     padding-bottom: 2px;
 }
 
+.dark-nav button {
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    border: none;
+    transition: border .4s;
+    border-bottom: 2.5px solid transparent;
+    padding-bottom: 2px;
+}
+
 nav button:hover {
     cursor: pointer;
     border-bottom:2.5px solid rgb(41, 41, 41);
-}
-
-
-textarea {
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    height: 80vh;
-    line-height: 28px;
-    font-size: 16px;
-    font-weight: 400;
-    width:  1130px;
-    font-family: 'Times New Roman', Times, serif;
-    outline: none;
-    margin: auto;
-    padding: 45px 60px 20px 60px;
-    border-radius: 8px;
 }
 
 .bg-dark {
@@ -127,17 +152,27 @@ textarea {
     padding:0px 0px 60px 0px;
 }
 
+.bg-light {
+    background: rgb(255, 255, 255);
+    color: rgb(7, 7, 7);
+    width: 100vw;
+}
+
 
 form input[type='text'] {
-    float: left;
     font-size: 25px;
+    z-index: 100 ;
     border: none;
     padding: 10px 10px;
     margin: auto;
     width: 100%;
     outline: none;
-    color: rgb(228, 228, 228);
+    color: rgb(0, 0, 0);
     background: transparent;
+}
+
+#id {
+    display: none;
 }
 
 .width-90 {
@@ -155,6 +190,10 @@ form input[type='text'] {
     margin:auto;
 }
 
+.files a {
+    text-decoration: none;
+}
+
 .header-white {
     color: white;
     text-align: left;
@@ -166,10 +205,11 @@ form input[type='text'] {
     background: rgb(255, 255, 255);
     color: rgb(17, 17, 17);
     width: 100%;
-    padding: 10px 10px;
+    padding: 8px 10px;
     border-radius: 4px;
     margin: auto;
-    margin: 10px 0px 30px 0px;
+    margin: 10px 0px 10px 0px;
+    text-decoration: none;
 }
 
 
@@ -183,6 +223,7 @@ form input[type='text'] {
 .file-card h3 {
     color: rgb(31, 31, 34);
     font-size: 24px;
+    padding: 0px 0px 3px 0px;
     font-weight: 400;
 }
 
@@ -364,3 +405,4 @@ form input[type='text'] {
     font-weight: 600;
     font-size: 18px;
 }
+

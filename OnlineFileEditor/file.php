@@ -37,7 +37,7 @@ if(isset($_GET['id']) && strlen($_GET['id']) === 15) {
     </div>
 </div>
 
-<div class="bg">
+<div class="bg-light">
 
     
     <form action="./form_handlers/save_file.php" method="post" id='text-area-div'>
@@ -47,7 +47,9 @@ if(isset($_GET['id']) && strlen($_GET['id']) === 15) {
                 echo("New File || Un-named");
             }
         ?>'>
-        <textarea name='file_contents' class='editor-bg' id='document-editor'><?php if(isset($document[3])){
+
+
+        <textarea name='file_contents' class='editor-bg' id='froala-editor'><?php if(isset($document[3])){
             print_r($document[3]); };?></textarea>
        <p>Last saved: <?php if(isset($document[3])){
            echo($document[5]);
@@ -68,6 +70,8 @@ if(isset($_GET['id']) && strlen($_GET['id']) === 15) {
     </div>
 </div>
 
+<!-- <script src="./design/modal.js"> -->
 <script src="./design/modal.js"></script>
+<script>  new FroalaEditor('textarea');</script>
 </body>
 </html>

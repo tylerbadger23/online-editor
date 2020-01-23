@@ -31,7 +31,6 @@ if (strlen($username) < 4 || strlen($username) > 16){
     header("Location: ../register.php?error=$errorMsg");
     exit;
 }
-
 // check username availability
 
 
