@@ -34,6 +34,7 @@ switch ($s_self) {
         $title = "View & Change Account Settings";
         break;
     }
+    
     return "$title";
 }
 

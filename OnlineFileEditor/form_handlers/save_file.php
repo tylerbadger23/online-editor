@@ -25,8 +25,7 @@ if($_POST['file_id'] == "false" ) {
         header("Location: ../index.php?error=$errorMsg");
         exit;
     }
-
-
+    
 } else if(strlen($_POST['file_id']) == $maxLengthOfID) {
     $unique_id = mysqli_real_escape_string($conn, $_POST['file_id']);
 

@@ -1,9 +1,17 @@
 <?php
 
-function checkUser($redirectToFile, $errorMsg) { //checks session for user returns true is true false if false
+function checkUser($redirectToFile, $errorMsg,$conn) { //checks session for user returns true is true false if false
     if($_SESSION['username']){
-        $username = $_SESSION['username'];
-        return true;
+        $username_washed = mysqli_real_escape_string($conn, $_SESSION['username']);
+
+        $sql_check = "SELECT * FROM users WHERE username='$username_washed'";
+        $results = mysqli_query($conn, $sql_check);
+        if(mysqli_num_rows($results) == 1  ){
+            return true;
+        } else {
+            header("Location: ./login.php?r=$errorMsg&rp=$redirectToFile");
+            exit;
+        }
     } else {
         header("Location: ./login.php?r=$errorMsg&rp=$redirectToFile");
         exit;

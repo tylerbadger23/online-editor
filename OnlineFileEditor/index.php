@@ -5,7 +5,7 @@ require "./form_handlers/db_functions.php";
 require "./headers/header.php"; 
 
 // check login before continuing
-checkUser("index.php" ,"Must be logged in to view this content." );
+checkUser("index.php" ,"Must be logged in to view this content.",$conn );
 
 //use any authenticated functions after this line
 $results = getFilesFromUser($_SESSION['username'],$conn); //function that runs a call to files for all files relating t this perticualr user
@@ -27,9 +27,9 @@ $num_rows = mysqli_num_rows($results);
     </div>
 
 
-    <p class='error-msg' style='color:red'><?php if(isset($_GET['error'])){
+    <p class='error-msg' style='color:red'><?php if(isset($_GET['error'])) {
             echo($_GET['error']);
-    }?></p>
+    } ?></p>
 
 </div>
 </body>

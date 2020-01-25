@@ -14,28 +14,43 @@
     <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
     <link rel="stylesheet" href="./design/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<?php if(isset($_SESSION['username'])) { ?>
+<?php if(isset($_SESSION['username'])) { 
+        $username = $_SESSION['username']; ?>
+
     <?php if(basename($_SERVER['PHP_SELF']) == "file.php") { ?>
         <nav class='dark-nav'>
             <div class="links">
                 <form action="./form_handlers/logout.php" method="get">
                     <li><a href="index.php">Projects</a></li>
                     <li><a href="file.php?id=false">Create</a></li>
-                    <li><a href="index.php">Account</a></li>
+                    <li><a href="account.php?sun=<?php echo($username)?>">Account</a></li>
                     <li><button type="submit">Log Out</button></li>
                 </form>
             </div>
         </nav> 
-    <?php } else { ?>
+    <?php } else if(basename($_SERVER['PHP_SELF']) == "account.php") { ?>
+        <nav class='dark-nav'>
+            <div class="links">
+                <form action="./form_handlers/logout.php" method="get">
+                    <li><a href="index.php">Projects</a></li>
+                    <li><a href="file.php?id=false">Create</a></li>
+                    <li><a href="account.php?sun=<?php echo($username)?>">Account</a></li>
+                    <li><button type="submit">Log Out</button></li>
+                </form>
+            </div>
+        </nav> 
+    <?php } else{ ?>
         <nav class='light-nav'>
             <div class="links">
                 <form action="./form_handlers/logout.php" method="get">
                     <li><a href="index.php">Projects</a></li>
                     <li><a href="file.php?id=false">Create</a></li>
-                    <li><a href="index.php">Account</a></li>
+                    <li><a href="account.php?sun=<?php echo($username);?>"">Account</a></li>
                     <li><button type="submit">Log Out</button></li>
                 </form>
             </div>

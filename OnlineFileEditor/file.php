@@ -5,7 +5,7 @@ require "./config/authentication.php";
 require "./headers/header.php"; 
 
 // check login before continuing
-checkUser("index.php" ,"Must be logged in to view this content." );
+checkUser("index.php" ,"Must be logged in to view this content.", $conn);
 
 if(isset($_GET['id']) && strlen($_GET['id']) === 15) {
     $result = getFileDataFromUser($_GET['id'], $conn);
@@ -49,7 +49,7 @@ if(isset($_GET['id']) && strlen($_GET['id']) === 15) {
         ?>'>
 
 
-        <textarea name='file_contents' class='editor-bg' id='froala-editor'><?php if(isset($document[3])){
+        <textarea name='file_contents' class='editor-bg' id='editor'><?php if(isset($document[3])){
             print_r($document[3]); };?></textarea>
        <p>Last saved: <?php if(isset($document[3])){
            echo($document[5]);
