@@ -3,32 +3,43 @@ require "./config/config.php";
 require "./headers/header.php";  
 ?>
 
-
-<form action="form_handlers/login_user.php" method="post" id='login-form'>
-    <div class="form-center">
-        <h2 class='left-login'>Login</h2>
+<div class="login-bg">
+    <div class="form-center register">
+    <h2 class='left-login'>Sign In</h2>
+    <br>
+        <form class="ui form" action="form_handlers/login_user.php" method="post">
+        <div class="field">
+            <label>Email</label>
+            <input type="text" name="log_email" placeholder="Enter your email" required>
+        </div>
+        <div class="field">
+            <label>Password</label>
+            <input type="password" name="log_pw" placeholder="Choose a strong password" required>
+        </div>
+            <p class='error-msg' style='color:red'><?php if(isset($_GET['error'])){
+                echo($_GET['error']);
+            }?></p>
         <p class='red-msg' style='color:green'><?php  if(isset($_GET['r'])){
-            echo($_GET['r']);
-        }?></p>
-        <br>
-
+                echo($_GET['r']);
+            }?></p>
         <p class='success-msg' style='color:green'><?php if(isset($_GET['success'])){
-            echo($_GET['success']); }?></p>
+                echo($_GET['success']); }?></p>
+        <button class="ui button" type="submit">Register</button>
 
-        <input type="email" name="log_email" placeholder="Enter email">
-        <input type="password" name="log_pw" placeholder="Enter password">
+        <div class="field">
+            <div class="ui">
+            <a href="register.php" class='switch-link'>Create a account</a>
+            </div>
+        </div>
+
         <input type="hidden" name="redirect" value='<?php if(isset($_GET['rp'])) {    
-        echo($_GET['rp']) ;}?>'>
-        <br>
-        <input type="submit" value='Login'>
-        <br>
-        <br>
-        <a href="register.php" class='signuplink'>Sign Up For Free</a>
-        <p class='error-msg' style='color:red'><?php if(isset($_GET['error'])){
-            echo($_GET['error']);
-        }?></p>
+                echo($_GET['rp']) ;}?>'>
+        <input type="hidden" name="redirect" value='<?php if(isset($_GET['rp'])) {    
+            echo($_GET['rp']) ;}?>'>
+        </form>
     </div>
-</form>
+</div>
 
+<script src="./effects.js"></script>
 </body>
 </html>

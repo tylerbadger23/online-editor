@@ -17,6 +17,7 @@ if(isset($_GET['id']) && strlen($_GET['id']) === 15) {
 
 <div id="deleteModal" class='modal'>
     <div class="modal-content">
+    
         <form action="./form_handlers/delete_file.php" method="post" id='text-area-div'>
             <h3 class='modal-h'>You are about to delete <span class='modal-f-name'><?php if(isset($document[1])){
                 echo($document[1]);
@@ -38,8 +39,6 @@ if(isset($_GET['id']) && strlen($_GET['id']) === 15) {
 </div>
 
 <div class="bg-light">
-
-    
     <form action="./form_handlers/save_file.php" method="post" id='text-area-div'>
         <input class='file-title' type="text" name="file_name" id="file_name" value='<?php if(isset($document[1])){
                 echo($document[1]);
@@ -62,12 +61,11 @@ if(isset($_GET['id']) && strlen($_GET['id']) === 15) {
         } else {
             echo($_SESSION['username']);
         };?>'>
-        <input id='save-btn' type="submit" value='Save'>
+        <input type="submit" value='Save' class="ui primary button">
     </form>
 
-    <div class='width-90'>
-        <button id='delete-modal' class='delete-btn'>Delete</button>
-    </div>
+    <div id="text-area-div"><button id='delete-modal' class="ui secondary button">Delete</button></div>
+
 </div>
 
 <!-- <script src="./design/modal.js"> -->

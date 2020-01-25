@@ -12,7 +12,9 @@ $results = getFilesFromUser($_SESSION['username'],$conn); //function that runs a
 $num_rows = mysqli_num_rows($results);
 ?>
 
-<h2>Account settings for: <?php echo($_SESSION['username']);?></h2>
+<h2>Preferences</h2>
+
+</div>
 
 
 </body>

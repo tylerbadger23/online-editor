@@ -7,6 +7,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./icon/favicon-16x16.png">
+
+    <link rel="stylesheet" type="text/css" href="./design/Semantic/semantic.min.css">
+
     <link rel="manifest" href="./icon/site.webmanifest">
     <title><?php  echo(displayTitle(basename($_SERVER['PHP_SELF'])))?></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,7 +36,7 @@
                 </form>
             </div>
         </nav> 
-    <?php } else if(basename($_SERVER['PHP_SELF']) == "account.php") { ?>
+    <?php } else if(basename($_SERVER['PHP_SELF']) == "account.php" || basename($_SERVER['PHP_SELF']) == "index.php") { ?>
         <nav class='dark-nav'>
             <div class="links">
                 <form action="./form_handlers/logout.php" method="get">
@@ -44,7 +47,9 @@
                 </form>
             </div>
         </nav> 
-    <?php } else{ ?>
+    <?php }
+    
+    else{ ?>
         <nav class='light-nav'>
             <div class="links">
                 <form action="./form_handlers/logout.php" method="get">
@@ -57,7 +62,17 @@
         </nav> 
     <?php }?>
 
-<?php } else { ?>
+<?php } else if(basename($_SERVER['PHP_SELF']) == "register.php" || basename($_SERVER['PHP_SELF']) == "login.php" ) { ?>
+        <nav class='light-nav'>
+            <div class="links">
+                <li><a href="">About</a></li>
+                <li><a href="">Preview Editor</a></li>
+                <li><a href="register.php">Register</a></li>
+                <li><a href="login.php">Login</a></li>
+            </div>
+        </nav> 
+    <?php }
+    else { ?>
     <nav class='light-nav'>
         <div class="links">
             <li><a href="">About</a></li>

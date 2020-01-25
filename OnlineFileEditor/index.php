@@ -12,25 +12,29 @@ $results = getFilesFromUser($_SESSION['username'],$conn); //function that runs a
 $num_rows = mysqli_num_rows($results);
 ?>
 
-<div class="bg-dark">
+
+
+<div class="bg-light">
 
     <div class="files">
-        <p class='left-pagination top-40'>You currently have <?php echo($num_rows); ?>  documents available to edit. If you want to create a new file, click the <a class='span-a' href="file.php?id=false">create</a> button to get started. </p>
-        <?php 
-
+        <h2 class='recent-files'>Recently Edited</h2>
+        <div class="ui cards"><?php 
         while ($row = mysqli_fetch_row($results)) {?>
-        <a href="file.php?id=<?php echo($row[4]); ?>"><div class="file-card">
-            <h3 class='no-underline'><?php echo($row[1]); ?></h3>
-            <p>Last edited: <?php echo($row[5]); ?></p>
-        </div></a> <?php } //end of php block ?> 
-
+            <div class="card" >
+            <div class="content">
+                <a href="file.php?id=<?php echo($row[4]); ?>" class="header"><?php echo($row[1]); ?></a>
+                <div class="meta">Last Change: <?php echo($row[5]); ?></div>
+            </div>
+        </div> <?php } ?>
+        
     </div>
 
-
+    <a href="file.php?id=false" id='create-new-file' class="ui primary button">Create</a>
     <p class='error-msg' style='color:red'><?php if(isset($_GET['error'])) {
             echo($_GET['error']);
     } ?></p>
 
 </div>
+
 </body>
 </html>
