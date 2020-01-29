@@ -1,7 +1,7 @@
 <?php
 
 function checkUser($redirectToFile, $errorMsg,$conn) { //checks session for user returns true is true false if false
-    if($_SESSION['username']){
+    if(isset($_SESSION['username'])){
         $username_washed = mysqli_real_escape_string($conn, $_SESSION['username']);
 
         $sql_check = "SELECT * FROM users WHERE username='$username_washed'";
@@ -17,15 +17,15 @@ function checkUser($redirectToFile, $errorMsg,$conn) { //checks session for user
         exit;
     }
 }
-
+    
 function generateUniqueID($requiredLength) {
     $rand_str = uniqid();
+    //required length will be set in paramaters
 
-    while (strlen($rand_str) !== $requiredLength) {
+    while (strlen($rand_str) < $requiredLength) {
         $rand_ints = rand(0, 9);
         $rand_str = $rand_str . $rand_ints;
     }
 
     return $rand_str;
 }
-    

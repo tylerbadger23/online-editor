@@ -5,12 +5,15 @@ require "./config/authentication.php";
 require "./headers/header.php"; 
 
 // check login before continuing
-checkUser("index.php" ,"Must be logged in to view this content.", $conn);
+checkUser("index.php" ,"Must be logged in to view this content", $conn);
 
-if(isset($_GET['id']) && strlen($_GET['id']) === 15) {
+if(isset($_GET['id'])) {
     $result = getFileDataFromUser($_GET['id'], $conn);
     $document = mysqli_fetch_row($result);
+} else {
+    echo(strlen($_GET['id']));
 }
+
 
 //ifile value check
 ?>
@@ -19,7 +22,7 @@ if(isset($_GET['id']) && strlen($_GET['id']) === 15) {
     <div class="modal-content">
     
         <form action="./form_handlers/delete_file.php" method="post" id='text-area-div'>
-            <h3 class='modal-h'>You are about to delete <span class='modal-f-name'><?php if(isset($document[1])){
+            <h3 class='modal-h'>You are about to delete <span class='modal-f-name'><?php if(isset($document[1])) {
                 echo($document[1]);
             } else {
                 echo("Unsaved File");
@@ -27,7 +30,7 @@ if(isset($_GET['id']) && strlen($_GET['id']) === 15) {
         ?></span></h3>
             <p class='modal-p'>This action cannot be un-done. Are you sure you want to continue?</p>
             <input id='delete-btn' type="submit" value='Delete'>
-            <input type="hidden" name="file_id" value='<?php  echo($_GET['id']); ?>'>
+            <input type="hidden" name="file_id" value='<?php echo($_GET['id']); ?>'>
             <input type="hidden" name="real_id" value='<?php if(isset($document[0])){
                 echo($document[0]);
             } else {

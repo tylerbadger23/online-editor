@@ -1,6 +1,6 @@
 <?php
 require "../config/config.php";
-if(isset($_POST['file_id']) && strlen($_POST['file_id']) === 15) { // check length of id in url to make sure its un tamered in length /format
+if(isset($_POST['file_id']) && strlen($_POST['file_id']) >= 10) { // check length of id in url to make sure its un tamered in length /format
     //still need to check data before entering it into database 
     //TODO filter all data still un-done
 

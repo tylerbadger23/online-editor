@@ -1,7 +1,8 @@
 <?php
-require "../config/config.php";
 require "../config/authentication.php";
-$maxLengthOfID = 15; // max lengtyh set in mysqli db for unique id
+require "../config/config.php";
+
+$maxLengthOfID = 10; // max lengtyh set in mysqli db for unique id
 
 $username = mysqli_real_escape_string($conn, $_POST['username']);
 $filename = mysqli_real_escape_string($conn, $_POST['file_name']);
@@ -21,16 +22,17 @@ if($_POST['file_id'] == "false" ) {
         header("Location: ../file.php?id=$unique_id");
         exit;
     } else {
-        $errorMsg = "File ccould not be saved to database. Something went wrong. ";
-        header("Location: ../index.php?error=$errorMsg");
-        exit;
+        echo($create_query);
+        $errorMsg = "File could not be saved to the database. Please try again";
+        //header("Location: ../index.php?error=$errorMsg");
+        //exit;
     }
     
-} else if(strlen($_POST['file_id']) == $maxLengthOfID) {
+} else if(strlen($_POST['file_id']) >= $maxLengthOfID) {
     $unique_id = mysqli_real_escape_string($conn, $_POST['file_id']);
 
     $update_query = "UPDATE `files` SET `filename` = '$filename', `contents` = '$file_contents' WHERE `unique_id` = '$unique_id'";
-    if(mysqli_query($conn, $update_query)){ // if query is successfull then save file then if not display errror
+    if(mysqli_query($conn, $update_query)) { // if query is successfull then save file then if not display errror
         $errorMsg = "File was saved completely";
         header("Location: ../file.php?id=$unique_id");
         exit;
@@ -40,9 +42,8 @@ if($_POST['file_id'] == "false" ) {
         exit;
     }
 } else {
+    echo(strlen($_POST['file_id']));
     $errorMsg = "Something went wrong trying to save your file. Try again later";
     header("Location: ../index.php?error=$errorMsg");
     exit;
 }
-
-
